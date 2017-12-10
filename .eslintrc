@@ -1,0 +1,19 @@
+
+{
+  "root": true,
+  "extends": "airbnb",
+  "globals": {
+    "wp": true
+  },
+  "env": {
+    "amd": true,
+    "browser": true,
+    "jquery": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "linebreak-style": 0,
+    "comma-dangle": 0
+  }
+}

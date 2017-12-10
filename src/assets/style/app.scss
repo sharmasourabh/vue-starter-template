@@ -1,0 +1,21 @@
+$flag-icon-css-path: '~flag-icon-css/flags' !default;
+@import "variables";
+// @import "~bootstrap/scss/bootstrap.scss";
+@import "~bulma/bulma.sass";
+@import "~flag-icon-css/sass/flag-icon";
+// @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+.bd-special-shadow {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(transparent));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), transparent);
+  height: 8px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+}
