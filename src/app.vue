@@ -1,75 +1,76 @@
 <template>
   <div id="app">
-    <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+    <nav id="navbar" class="navbar" style="transform: translateY(0px);">
       <div id="specialShadow" class="bd-special-shadow" style="opacity: 1; transform: scaleY(1);"></div>
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-          <img src="./assets/img/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
-        </a>
-        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-
-      <div id="navBarMenu" class="navbar-menu">
-        <div class="navbar-start">
-          <router-link class="navbar-item" to="/" exact>
-            Home
-          </router-link>
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" href="/documentation/overview/start/">
-              Menu
-            </a>
-            <div class="navbar-dropdown is-boxed">
-              <a class="navbar-item" href="/documentation/overview/start/">
-                Overview
-              </a>
-              <a class="navbar-item" href="https://bulma.io/documentation/modifiers/syntax/">
-                Modifiers
-              </a>
-              <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
-                Columns
-              </a>
-              <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
-                Layout
-              </a>
-              <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
-                Form
-              </a>
-              <hr class="navbar-divider">
-              <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
-                Elements
-              </a>
-              <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
-                Components
-              </a>
-            </div>
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            <img src="./assets/img/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+          </a>
+          <div id="navBarBurger" class="navbar-burger burger" data-target="navBarMenu" v-on:click="showNav = !showNav" v-bind:class="{ 'is-active' : showNav }">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </div>
 
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="field is-grouped">
-              <p class="control" v-if="!user.authenticated">
-                <a class="button is-primary" href="/#/login">
-                  <span class="icon">
-                    <i class="fa fa-download"></i>
-                  </span>
-                  <span>Login</span>
+        <div id="navBarMenu" class="navbar-menu" v-bind:class="{ 'is-active' : showNav }">
+          <div class="navbar-start">
+            <router-link class="navbar-item" to="/" exact>
+              Home
+            </router-link>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link" href="/documentation/overview/start/">
+                Menu
+              </a>
+              <div class="navbar-dropdown is-boxed">
+                <a class="navbar-item" href="/documentation/overview/start/">
+                  Overview
                 </a>
-              </p>
-              <p class="control" v-if="user.authenticated">
-                <a class="button is-primary" @click="logout()">
-                  <span>Logout</span>
+                <a class="navbar-item" href="https://bulma.io/documentation/modifiers/syntax/">
+                  Modifiers
                 </a>
-              </p>
-              <p class="control">
-                <a class="button is-link" href="/#/aboutus">
-                  <span>About Us</span>
+                <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
+                  Columns
                 </a>
-              </p>
+                <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
+                  Layout
+                </a>
+                <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
+                  Form
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
+                  Elements
+                </a>
+                <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
+                  Components
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="field is-grouped">
+                <p class="control" v-if="!user.authenticated">
+                  <a class="button is-primary" href="/#/login">
+                    <span class="icon">
+                      <i class="fa fa-download"></i>
+                    </span>
+                    <span>Login</span>
+                  </a>
+                </p>
+                <p class="control" v-if="user.authenticated">
+                  <a class="button is-primary" @click="logout()">
+                    <span>Logout</span>
+                  </a>
+                </p>
+                <p class="control">
+                  <a class="button is-link" href="/#/aboutus">
+                    <span>About Us</span>
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -99,7 +100,8 @@ import auth from './auth';
 export default {
   data() {
     return {
-      user: auth.user
+      user: auth.user,
+      showNav: false
     };
   },
 

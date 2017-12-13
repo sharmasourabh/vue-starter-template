@@ -11,7 +11,7 @@
         </p>
       </div>
     </section>
-    <p class="has-text-centered">There are five columns below</p>
+    <p class="has-text-centered"><strong> Login attempts: {{ $store.state.count }}.</strong> There are five columns below</p>
     <div class="columns has-text-centered">
       <div class="column">
         <a class="is-link">1</a>
