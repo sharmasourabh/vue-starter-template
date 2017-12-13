@@ -4,7 +4,7 @@
       <div id="specialShadow" class="bd-special-shadow" style="opacity: 1; transform: scaleY(1);"></div>
       <div class="navbar-brand">
         <a class="navbar-item" href="/">
-          <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+          <img src="./assets/img/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
         </a>
         <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
           <span></span>
@@ -15,9 +15,9 @@
 
       <div id="navBarMenu" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item" href="/">
+          <router-link class="navbar-item" to="/" exact>
             Home
-          </a>
+          </router-link>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link" href="/documentation/overview/start/">
               Menu
@@ -52,12 +52,17 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="field is-grouped">
-              <p class="control">
+              <p class="control" v-if="!user.authenticated">
                 <a class="button is-primary" href="/#/login">
                   <span class="icon">
                     <i class="fa fa-download"></i>
                   </span>
                   <span>Login</span>
+                </a>
+              </p>
+              <p class="control" v-if="user.authenticated">
+                <a class="button is-primary" @click="logout()">
+                  <span>Logout</span>
                 </a>
               </p>
               <p class="control">
@@ -79,7 +84,7 @@
             <strong>
               <a href="https://github.com/sharmasourabh/vue-starter-template">Vue Starter Template</a>
             </strong> by
-            <a href="https://www.twitter.com/sourabhhsharma">Sourabh Sharma</a>. Made with love in
+            <a href="https://www.twitter.com/sourabhhsharma">Sourabh Sharma</a>. Made with ❤ in
             <span class="flag-icon flag-icon-in"></span>.
           </p>
         </div>
@@ -89,11 +94,19 @@
 </template>
 
 <script>
+import auth from './auth';
+
 export default {
   data() {
     return {
-      loader: false
+      user: auth.user
     };
+  },
+
+  methods: {
+    logout() {
+      auth.logout();
+    }
   }
 };
 </script>

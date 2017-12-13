@@ -5,12 +5,12 @@
         <div class="columns">
           <div class="column container is-6">
             <div class="block">
-              <p class="title is-5">Login</p>
+              <p class="title is-5">Login {{ $store.state.count }}, count is {{ evenOrOdd }}</p>
             </div>
             <div class="field">
               <label class="label">Enter your email and password to login.</label>
               <p class="control has-icons-left has-icons-right">
-                <input class="input is-rounded" type="email" placeholder="Email">
+                <input class="input is-rounded" type="email" placeholder="Email" v-model="params.email">
                 <span class="icon is-small is-left">
                   <i class="fa fa-envelope"></i>
                 </span>
@@ -21,7 +21,7 @@
             </div>
             <div class="field">
               <p class="control has-icons-left">
-                <input class="input" type="password" placeholder="Password">
+                <input class="input" type="password" placeholder="Password" v-model="params.password">
                 <span class="icon is-small is-left">
                   <i class="fa fa-lock"></i>
                 </span>
@@ -29,7 +29,7 @@
             </div>
             <div class="field">
               <p class="control">
-                <button class="button is-success">
+                <button class="button is-success" :class="{'is-loading': isloading}" @click="login">
                   Login
                 </button>
               </p>
@@ -38,40 +38,44 @@
         </div>
       </div>
     </div>
-    <!--         <section class="section">
-    <div class="container">
-      <div class="columns">
-        <div class="column is-6">
-          <nav class="panel">
-            <p class="panel-heading">
-              Checklist
-            </p>
-            <div class="panel-block">
-              <form>
-                <input class="input" type="text" />
-              </form>
-            </div>
-            <label class="panel-checkbox">
-              <input class="checkbox" type="checkbox"> Remember me Remember me Remember me Remember me Remember me Remember me
-            </label>
-            <div class="panel-block">
-              <button class="button is-primary is-outlined is-fullwidth">
-                Finish all, close list
-              </button>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </section> -->
   </div>
 </template>
 <script>
+import { mapGetters, mapActions } from 'vuex';
+import auth from '../auth';
+
+// const url = 'http://localhost:3000/auth/token';
 export default {
   data() {
     return {
-      msg: 'login vue'
+      msg: 'login vue',
+      params: {
+        email: '',
+        password: ''
+      },
+      isloading: false,
+      error: '',
     };
+  },
+  computed: {
+    ...mapGetters([
+      'evenOrOdd'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'increment',
+      'decrement'
+    ]),
+    login() {
+      const creds = {
+        email: this.params.email,
+        password: this.params.password
+      };
+      this.isloading = true;
+      auth.login(this, creds);
+      this.increment();
+    }
   }
 };
 </script>

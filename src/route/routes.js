@@ -1,7 +1,7 @@
-import Home from './../views/home.vue';
-import AboutUs from './../views/aboutus.vue';
-import Login from './../views/login.vue';
-import HomeContent from './../views/homecontent.vue';
+import Home from './../components/home.vue';
+import AboutUs from './../components/aboutus.vue';
+import Login from './../components/login.vue';
+import HomeContent from './../components/homecontent.vue';
 
 import { Auth } from './middleware';
 

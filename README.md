@@ -7,7 +7,7 @@ Please check package.json for updated list
 
 1. "accounting": "^0.4.1", // Provides simple and advanced number, money and currency formatting
 1. "bulma": "^0.6.1",
-1. "axios": "^0.17.1", // For REST calls
+1. "axios": "^0.17.1", // For HTTP client
 1. "flag-icon-css": "^2.8.0",
 1. "idle-timeout": "^0.1.0",  // Makes idle state detection in the browser
 1. "lodash": "^4.17.4",    // utility library delivering modularity, performance & extras
@@ -27,6 +27,9 @@ Uses webpack, babel etc.
 ``` bash
 # install dependencies
 yarn install
+
+# Start mock server (json-server) from mock_server directory
+node server.js
 
 # serve with hot reload at localhost:8080
 yarn run dev
