@@ -16,11 +16,15 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.(css|scss)$/,
+        loader: 'css-loader|sass-loader'
+      },
+      {
         test: /\.json$/,
         loader: 'json-loader'
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|eot|ttf)$/,
         loader: 'file-loader',
         query: {
           name: 'img/[name].[ext]?[hash]'

@@ -22,6 +22,7 @@ export default {
       this.user.authenticated = true;
       context.isloading = false;
       // Redirect to a specified route
+      context.$store.dispatch('login');
       if (redirect) {
         router.go(redirect);
       } else {
@@ -52,21 +53,13 @@ export default {
   },
 
   // To log out, we just need to remove the token
-  logout() {
+  logout(context) {
     localStorage.removeItem('auth_token');
     localStorage.removeItem('auth_user');
     localStorage.removeItem('auth_id');
     this.user.authenticated = false;
+    context.$store.dispatch('logout');
     router.push('/login');
-  },
-
-  checkAuth() {
-    const jwt = localStorage.getItem('auth_token');
-    if (jwt) {
-      this.user.authenticated = true;
-    } else {
-      this.user.authenticated = false;
-    }
   },
 
   // The object to be passed as a header for authenticated requests

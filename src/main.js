@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import { sync } from 'vuex-router-sync';
 import axios from 'axios';
+import VeeValidate from 'vee-validate';
 import store from './store/store';
 import router from './route/index';
 import App from './app.vue';
@@ -9,8 +10,8 @@ import auth from './auth';
 
 sync(store, router);
 
-auth.checkAuth();
 axios.defaults.headers.common['Authorization'] = auth.getAuthHeader();
+Vue.use(VeeValidate);
 
 new Vue({
   router,

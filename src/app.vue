@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav id="navbar" class="navbar" style="transform: translateY(0px);">
+    <nav id="navbar" class="navbar">
       <div id="specialShadow" class="bd-special-shadow" style="opacity: 1; transform: scaleY(1);"></div>
       <div class="container">
         <div class="navbar-brand">
@@ -52,16 +52,19 @@
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="field is-grouped">
-                <p class="control" v-if="!user.authenticated">
+                <p class="control" v-if="!isUserLoggedIn">
                   <a class="button is-primary" href="/#/login">
                     <span class="icon">
-                      <i class="fa fa-download"></i>
+                      <i class="fa fa-sign-in"></i>
                     </span>
                     <span>Login</span>
                   </a>
                 </p>
-                <p class="control" v-if="user.authenticated">
+                <p class="control" v-if="isUserLoggedIn">
                   <a class="button is-primary" @click="logout()">
+                    <span class="icon">
+                      <i class="fa fa-sign-out"></i>
+                    </span>                    
                     <span>Logout</span>
                   </a>
                 </p>
@@ -95,6 +98,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import auth from './auth';
 
 export default {
@@ -105,9 +109,15 @@ export default {
     };
   },
 
+  computed: {
+    ...mapGetters([
+      'isUserLoggedIn'
+    ])
+  },
+
   methods: {
     logout() {
-      auth.logout();
+      auth.logout(this);
     }
   }
 };

@@ -4,32 +4,34 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const state = {
-  viewLoad: false,
-  user: false,
-  count: 0
+  count: 0,
+  isUserLoggedIn: !!localStorage.getItem('auth_token')
 };
 
 const getters = {
-  evenOrOdd: state => (state.count % 2 === 0 ? 'even' : 'odd')
+  evenOrOdd: state => (state.count % 2 === 0 ? 'even' : 'odd'),
+  isUserLoggedIn: state => state.isUserLoggedIn
 };
 
 const actions = {
-  deneme: ({ commit, dispatch, state }, type) => {
-    console.log(1);
-  },
   increment: ({ commit }) => commit('increment'),
-  decrement: ({ commit }) => commit('decrement')
+  decrement: ({ commit }) => commit('decrement'),
+  login: ({ commit }) => commit('login'),
+  logout: ({ commit }) => commit('logout')
 };
 
 const mutations = {
-  viewLoad: (state, status) => {
-    state.viewLoad = status;
-  },
   increment: (state) => {
     state.count += 1;
   },
   decrement: (state) => {
     state.count -= 1;
+  },
+  login: (state) => {
+    state.isUserLoggedIn = true;
+  },
+  logout: (state) => {
+    state.isUserLoggedIn = false;
   }
 };
 

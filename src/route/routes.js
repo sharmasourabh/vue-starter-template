@@ -3,8 +3,6 @@ import AboutUs from './../components/aboutus.vue';
 import Login from './../components/login.vue';
 import HomeContent from './../components/homecontent.vue';
 
-import { Auth } from './middleware';
-
 export default [
   {
     path: '/',
@@ -13,7 +11,6 @@ export default [
       {
         path: '',
         component: HomeContent,
-        // beforeEnter: Auth
       },
       {
         path: 'aboutus',
