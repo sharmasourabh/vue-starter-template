@@ -1,4 +1,4 @@
-# Vue starter template
+# Vue starter template [![Build Status](https://travis-ci.org/sharmasourabh/vue-starter-template.svg?branch=develop)](https://travis-ci.org/sharmasourabh/vue-starter-template)
 
 This tempalte uses bulma for UI components.
 
@@ -30,6 +30,9 @@ yarn install
 
 # Start mock server (json-server) from mock_server directory
 node server.js
+
+# Unit test and code coverage
+yarn run test
 
 # serve with hot reload at localhost:8080
 yarn run dev
