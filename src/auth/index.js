@@ -24,7 +24,7 @@ export default {
       // Redirect to a specified route
       context.$store.dispatch('login');
       if (redirect) {
-        router.go(redirect);
+        router.push(redirect);
       } else {
         router.push('/');
       }
@@ -45,7 +45,7 @@ export default {
       this.user.authenticated = true;
 
       if (redirect) {
-        router.go(redirect);
+        router.push(redirect);
       }
     }).catch((error) => {
       context.error = error.response.data;

@@ -1,5 +1,14 @@
 {
   "presets": [
-    ["stage-3"]
-  ]
+    [
+      "stage-3"
+    ]
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "istanbul"
+      ]
+    }
+  }
 }

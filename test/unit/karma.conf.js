@@ -1,3 +1,4 @@
+const path = require('path');
 const webpackConfig = require('../../webpack.config.js');
 
 module.exports = (config) => {
@@ -11,6 +12,13 @@ module.exports = (config) => {
     preprocessors: {
       './index.js': ['webpack', 'sourcemap']
     },
+    /* preLoaders: [
+      {
+        test: /^((?!spec).)*\.js$/,
+        include: path.resolve('../../src/app.vue'),
+        loader: 'isparta'
+      }
+    ], */
     colors: true,
     webpack: webpackConfig,
     webpackMiddleware: {
@@ -18,10 +26,11 @@ module.exports = (config) => {
     },
     coverageReporter: {
       dir: './coverage',
+      includeAllSources: true,
       reporters: [
         { type: 'lcov', subdir: '.' },
         { type: 'text-summary' },
-      ],
+      ]
     },
   });
 };
