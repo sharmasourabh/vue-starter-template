@@ -5,20 +5,27 @@ This tempalte uses bulma for UI components.
 ## Packages
 Please check package.json for updated list
 
-1. "accounting": "^0.4.1", // Provides simple and advanced number, money and currency formatting
-1. "bulma": "^0.6.1",
-1. "axios": "^0.17.1", // For HTTP client
-1. "flag-icon-css": "^2.8.0",
-1. "idle-timeout": "^0.1.0",  // Makes idle state detection in the browser
-1. "lodash": "^4.17.4",    // utility library delivering modularity, performance & extras
-1. "moment": "^2.19.1",    // Parse, validate, manipulate, and display dates and times
-1. "moment-timezone": "^0.5.14", // Parse and display dates in any timezone
-1. "popper.js": "^1.12.3", // Easily position tooltips, popovers or anything with just a line of code
-1. "vue": "^2.5.3",
-1. "vue-router": "^3.0.1", // Official router of vue.js
-1. "vue-server-renderer": "^2.5.3", //  Offical offers Node.js server-side rendering for Vue 2.0
-1. "vuex": "^3.0.1", // Official Centralized State Management for Vue.js
-1. "vuex-router-sync": "^5.0.0" // Official Sync vue-router's current $route as part of vuex store's state.
+1. vue: Vuejs
+1. vue-router: Official router of vue.js
+1. vue-server-renderer: Offical offers Node.js server-side rendering for Vue 2.0
+1. vuex: Official Centralized State Management for Vue.js
+1. vuex-router-sync: Official Sync vue-router's current $route as part of vuex store's state.
+1. bulma: For UI
+1. axios: For HTTP client
+1. moment: Parse, validate, manipulate, and display dates and times
+1. moment-timezone: Parse and display dates in any timezone
+1. accounting: Provides simple and advanced number, money and currency formatting
+1. lodash: Utility library delivering modularity, performance & extras
+1. flag-icon-css: For flag icons
+1. idle-timeout: Makes idle state detection in the browser
+1. popper.js: Easily position tooltips, popovers or anything with just a line of code
+
+## Testing Packages
+
+Unit Testing: Jasmine
+Unit Test Runner: Karma
+Unit Test Coverage: Istanabul
+End 2 End Test: Testcafe
 
 ## Build Setup
 
@@ -39,4 +46,17 @@ yarn run dev
 
 # build for production with minification
 yarn run build
+```
+
+## E2E Tests
+
+Uses test-cafe and testcafe-vue-selectors
+
+``` bash
+# Please make sure that mock server (json-server) is up before performing e2e testing. If not, start from mock_server directory
+node server.js
+
+# Run e2e from project home dir
+yarn run e2e
+
 ```

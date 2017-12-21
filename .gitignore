@@ -6,3 +6,13 @@ dist/
 .vscode/
 package-lock.json
 **/coverage/*
+/test/e2e/reports/
+**/screenshots/*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

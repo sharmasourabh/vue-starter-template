@@ -6,6 +6,7 @@
   "scripts": {
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit --display-error-details",
+    "e2e": "testcafe chrome test/e2e/*.spec.js --app \"npm run dev\" --app-init-delay 10000 -S -s screenshots",
     "dev": "webpack-dev-server --colors --inline ",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
@@ -57,6 +58,8 @@
     "node-sass": "^4.6.0",
     "resolve-url-loader": "^2.2.0",
     "sass-loader": "^6.0.6",
+    "testcafe": "^0.18.5",
+    "testcafe-vue-selectors": "^2.1.0",
     "url-loader": "^0.6.2",
     "vue-loader": "^13.5.0",
     "vue-template-compiler": "^2.5.3",
