@@ -1,4 +1,4 @@
-# Vue starter template [![Build Status](https://travis-ci.org/sharmasourabh/vue-starter-template.svg?branch=develop)](https://travis-ci.org/sharmasourabh/vue-starter-template)
+# Vue starter template [![Build Status](https://travis-ci.org/sharmasourabh/vue-starter-template.svg?branch=develop)](https://travis-ci.org/sharmasourabh/vue-starter-template) [![Dependency Status](https://david-dm.org/sharmasourabh/vue-starter-template.svg?branch=develop)](https://david-dm.org/sharmasourabh/vue-starter-template.svg)
 
 This tempalte uses bulma for UI components.
 
