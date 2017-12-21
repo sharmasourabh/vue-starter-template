@@ -17,7 +17,7 @@
     "font-awesome": "^4.7.0",
     "idle-timeout": "^0.1.0",
     "lodash": "^4.17.4",
-    "moment": "^2.19.1",
+    "moment": "^2.20.1",
     "moment-timezone": "^0.5.14",
     "popper.js": "^1.12.3",
     "vee-validate": "^2.0.0-rc.27",
