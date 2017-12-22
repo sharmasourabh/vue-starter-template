@@ -1,31 +1,32 @@
 # Vue starter template [![Build Status](https://travis-ci.org/sharmasourabh/vue-starter-template.svg?branch=develop)](https://travis-ci.org/sharmasourabh/vue-starter-template) [![Dependency Status](https://david-dm.org/sharmasourabh/vue-starter-template.svg?branch=develop)](https://david-dm.org/sharmasourabh/vue-starter-template.svg)
 
-This tempalte uses bulma for UI components.
+A simple, useful and opiniated vue starter template. This tempalte uses bulma with font-awesome for UI components.
 
 ## Packages
 Please check package.json for updated list
 
-1. vue: Vuejs
-1. vue-router: Official router of vue.js
-1. vue-server-renderer: Offical offers Node.js server-side rendering for Vue 2.0
-1. vuex: Official Centralized State Management for Vue.js
-1. vuex-router-sync: Official Sync vue-router's current $route as part of vuex store's state.
-1. bulma: For UI
-1. axios: For HTTP client
-1. moment: Parse, validate, manipulate, and display dates and times
-1. moment-timezone: Parse and display dates in any timezone
-1. accounting: Provides simple and advanced number, money and currency formatting
-1. lodash: Utility library delivering modularity, performance & extras
-1. flag-icon-css: For flag icons
-1. idle-timeout: Makes idle state detection in the browser
-1. popper.js: Easily position tooltips, popovers or anything with just a line of code
+1. `vue`
+1. `vue-router`: Official router of vue.js
+1. `vue-server-renderer`: Offical offers Node.js server-side rendering for Vue 2.0
+1. `vuex`: Official Centralized State Management for Vue.js
+1. `vuex-router-sync`: Official Sync vue-router's current $route as part of vuex store's state.
+1. `vee-validate`: For form validation
+1. `bulma`: For UI
+1. `axios`: For HTTP client
+1. `moment`: Parse, validate, manipulate, and display dates and times
+1. `moment-timezone`: Parse and display dates in any timezone
+1. `accounting`: Provides simple and advanced number, money and currency formatting
+1. `lodash`: Utility library delivering modularity, performance & extras
+1. `flag-icon-css`: For flag icons
+1. `idle-timeout`: Makes idle state detection in the browser
+1. `popper.js`: Easily position tooltips, popovers or anything with just a line of code
 
 ## Testing Packages
 
-Unit Testing: Jasmine
-Unit Test Runner: Karma
-Unit Test Coverage: Istanabul
-End 2 End Test: Testcafe
+- Unit Testing: `jasmine`
+- Unit Test Runner: `karma`
+- Unit Test Coverage: `istanabul`
+- End 2 End Test: `testcafe`
 
 ## Build Setup
 
