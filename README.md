@@ -1,4 +1,4 @@
-# Vue starter template [![Build Status](https://travis-ci.org/sharmasourabh/vue-starter-template.svg?branch=develop)](https://travis-ci.org/sharmasourabh/vue-starter-template) [![Dependency Status](https://david-dm.org/sharmasourabh/vue-starter-template.svg?branch=develop)](https://david-dm.org/sharmasourabh/vue-starter-template.svg)
+# Vue starter template [![Build Status](https://travis-ci.org/sharmasourabh/vue-starter-template.svg?branch=master)](https://travis-ci.org/sharmasourabh/vue-starter-template) [![Dependency Status](https://david-dm.org/sharmasourabh/vue-starter-template.svg?branch=master)](https://david-dm.org/sharmasourabh/vue-starter-template.svg)
 
 A simple, useful and opinionated vue starter template. This template uses bulma with font-awesome for UI components.
 
