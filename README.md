@@ -1,13 +1,13 @@
 # Vue starter template [![Build Status](https://travis-ci.org/sharmasourabh/vue-starter-template.svg?branch=develop)](https://travis-ci.org/sharmasourabh/vue-starter-template) [![Dependency Status](https://david-dm.org/sharmasourabh/vue-starter-template.svg?branch=develop)](https://david-dm.org/sharmasourabh/vue-starter-template.svg)
 
-A simple, useful and opiniated vue starter template. This tempalte uses bulma with font-awesome for UI components.
+A simple, useful and opinionated vue starter template. This template uses bulma with font-awesome for UI components.
 
 ## Packages
 Please check package.json for updated list
 
 1. `vue`
 1. `vue-router`: Official router of vue.js
-1. `vue-server-renderer`: Offical offers Node.js server-side rendering for Vue 2.0
+1. `vue-server-renderer`: Official offers Node.js server-side rendering for Vue 2.0
 1. `vuex`: Official Centralized State Management for Vue.js
 1. `vuex-router-sync`: Official Sync vue-router's current $route as part of vuex store's state.
 1. `vee-validate`: For form validation
