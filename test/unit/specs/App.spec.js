@@ -1,4 +1,4 @@
-import { mount, shallow, createLocalVue } from 'vue-test-utils';
+import { mount, shallow, createLocalVue } from '@vue/test-utils';
 import Vue from 'vue';
 import Vuex from 'vuex';
 import App from '../../../src/app.vue';
