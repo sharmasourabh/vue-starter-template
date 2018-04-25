@@ -30,7 +30,7 @@ Please check package.json for updated list
 
 ## Build Setup
 
-Uses webpack, babel etc.
+Uses webpack 4.x.x, babel etc.
 
 ``` bash
 # install dependencies

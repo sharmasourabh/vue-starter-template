@@ -1,7 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: ['./src/main.js'],
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -17,11 +19,20 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        loader: 'css-loader|sass-loader'
+        use: [{
+          loader: "css-loader" // translates CSS into CommonJS
+        }, {
+          loader: "sass-loader" // compiles Sass to CSS
+        }]
       },
       {
+        type: 'javascript/auto',
         test: /\.json$/,
-        loader: 'json-loader'
+        exclude: /(node_modules)/,
+        use: [{
+          loader: 'json-loader',
+          options: { name: '[name].[ext]' },
+        }],
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|eot|ttf)$/,
@@ -59,9 +70,12 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"'
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
+    new UglifyJSPlugin({
+      uglifyOptions: {
+        compress: {
+          drop_console: true,
+          warnings: false
+        }
       }
     })
   ]);
