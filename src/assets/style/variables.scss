@@ -1,4 +1,9 @@
-@import '~bulma/sass/utilities/_all.sass';
+@import "~bulma/sass/utilities/_all";
+
 $fa-font-path: "~font-awesome/fonts/";
 $brand-primary: $primary;
+// Modified all other bulma variables here
+// ...
+// ...
 
+@import "~bulma/bulma";
